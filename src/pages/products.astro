@@ -2,131 +2,348 @@
 // src/pages/products.astro
 import Layout from '../layouts/Layout.astro';
 
-const pageTitle = "PDC Core Barrels & Rebuild Program | Weldco Blades | Utah, Colorado, Wyoming";
-const pageDescription = "Explore our 8-inch and 10-inch PDC core barrels, engineered for dry-cutting and superior longevity. Learn about our cost-effective rebuild program.";
+const pageTitle = "PDC Core Barrels for Sale | 8\" & 10\" Core Bits | Weldco Blades | Rocky Mountain Region";
+const pageDescription = "High-performance PDC core barrels: 8\" ($2,500) and 10\" ($3,200) with 4X more cores. Dry-cutting technology, rebuildable design. Free shipping to Rocky Mountain region.";
+const pageUrl = "https://corebarrels.com/products";
+const pageKeywords = "PDC core barrels for sale, 8 inch core bit, 10 inch core bit, core barrel pricing, utility locating equipment, dry cutting core barrels, Rocky Mountain drilling contractor, core barrel specifications, rebuildable core barrels";
+const canonicalUrl = "https://corebarrels.com/products";
+const ogImage10 = "/images/pdc-core-barrel.avif";
+const ogImage8 = "/images/product-8-inch.avif";
 ---
 
 <Layout title={pageTitle} description={pageDescription} currentPage="products">
-  <!-- SEO Meta -->
-  <meta name="keywords" content="8 inch core barrel, 10 inch core barrel, PDC core barrel, dry cutting barrel, core barrel rebuild program, Weldco Blades products" slot="head" />
+  <!-- Enhanced SEO Meta Tags -->
+  <meta name="keywords" content={pageKeywords} slot="head" />
+  <meta name="author" content="Weldco Blades" slot="head" />
+  <meta name="robots" content="index, follow" slot="head" />
+  <meta name="language" content="English" slot="head" />
+  <meta name="revisit-after" content="7 days" slot="head" />
+  <meta name="distribution" content="global" slot="head" />
+  <meta name="rating" content="general" slot="head" />
+  <meta name="subject" content="PDC Core Barrels for Sale" slot="head" />
+  <meta name="classification" content="Industrial Equipment" slot="head" />
+  <meta name="coverage" content="Rocky Mountain Region" slot="head" />
+  <meta name="target" content="Utility Contractors, Government Agencies" slot="head" />
   
-  <!-- Schema for Products -->
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content={pageTitle} slot="head" />
+  <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:url" content={pageUrl} slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+  <meta property="og:site_name" content="Weldco Blades - PDC Core Barrels" slot="head" />
+  <meta property="og:image" content="https://corebarrels.com/images/8-core-bit-2.avif" slot="head" />
+  <meta property="og:image:alt" content="8-inch PDC Core Barrel for Utility Locating" slot="head" />
+  <meta property="og:image:width" content="1200" slot="head" />
+  <meta property="og:image:height" content="630" slot="head" />
+  <meta property="og:locale" content="en_US" slot="head" />
+  <meta property="og:locale:alternate" content="es_ES" slot="head" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:title" content={pageTitle} slot="head" />
+  <meta name="twitter:description" content={pageDescription} slot="head" />
+  <meta name="twitter:image" content="https://corebarrels.com/images/8-core-bit-2.avif" slot="head" />
+  <meta name="twitter:image:alt" content="8-inch PDC Core Barrel for Utility Locating" slot="head" />
+  <meta name="twitter:site" content="@weldcoblades" slot="head" />
+  <meta name="twitter:creator" content="@weldcoblades" slot="head" />
+  
+  <!-- Enhanced Product Schema markup -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
-    "@graph": [
+    "@type": "ItemList",
+    "name": "PDC Core Barrels Product Catalog",
+    "description": "High-performance PDC core barrels for utility locating",
+    "url": "https://corebarrels.com/products",
+    "numberOfItems": 2,
+    "itemListElement": [
       {
-        "@type": "Product",
-        "name": "Weldco 10\" PDC Core Bit",
-        "description": "10-inch PDC core barrel designed for superior longevity and dry-cutting capability in utility locating.",
-        "brand": { "@type": "Brand", "name": "Weldco Blades" },
-        "sku": "WBCB-PDC-10",
-        "image": "https://corebarrels.com/images/pdc-core-barrel.avif",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "1600.00",
-          "url": "https://corebarrels.com/contact",
-          "availability": "https://schema.org/InStock"
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "8\" PDC Core Barrel",
+          "description": "8-inch PDC core barrel for utility locating with dry-cutting technology",
+          "brand": {
+            "@type": "Brand",
+            "name": "Weldco Blades"
+          },
+          "model": "PDC-8",
+          "category": "Industrial Equipment",
+          "image": [
+            "https://corebarrels.com/images/8-core-bit-2.avif",
+            "https://corebarrels.com/images/8-inch-core-bit-2.avif"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "2500.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Weldco Blades"
+            },
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0.00",
+                "currency": "USD"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 1,
+                  "maxValue": 3,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 2,
+                  "maxValue": 5,
+                  "unitCode": "DAY"
+                }
+              }
+            }
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Diameter",
+              "value": "8 inches"
+            },
+            {
+              "@type": "PropertyValue", 
+              "name": "Cores Per Barrel",
+              "value": "600-800"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Technology",
+              "value": "PDC (Polycrystalline Diamond Compact)"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Water Required",
+              "value": "No"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Rebuildable",
+              "value": "Yes"
+            }
+          ]
         }
       },
       {
-        "@type": "Product",
-        "name": "Weldco 8\" PDC Core Bit",
-        "description": "8-inch PDC core barrel designed for superior longevity and dry-cutting capability in utility locating.",
-        "brand": { "@type": "Brand", "name": "Weldco Blades" },
-        "sku": "WBCB-PDC-8",
-        "image": "https://corebarrels.com/images/product-8-inch.avif",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "1400.00",
-          "url": "https://corebarrels.com/contact",
-          "availability": "https://schema.org/InStock"
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "10\" PDC Core Barrel",
+          "description": "10-inch PDC core barrel for utility locating with dry-cutting technology",
+          "brand": {
+            "@type": "Brand",
+            "name": "Weldco Blades"
+          },
+          "model": "PDC-10",
+          "category": "Industrial Equipment",
+          "image": [
+            "https://corebarrels.com/images/10-core-bit-2.avif",
+            "https://corebarrels.com/images/10-inch-core-bit-2.avif"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "3200.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Weldco Blades"
+            },
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0.00",
+                "currency": "USD"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 1,
+                  "maxValue": 3,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 2,
+                  "maxValue": 5,
+                  "unitCode": "DAY"
+                }
+              }
+            }
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Diameter",
+              "value": "10 inches"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Cores Per Barrel", 
+              "value": "600-800"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Technology",
+              "value": "PDC (Polycrystalline Diamond Compact)"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Water Required",
+              "value": "No"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Rebuildable",
+              "value": "Yes"
+            }
+          ]
         }
       }
-    ]
+    ],
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://corebarrels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://corebarrels.com/products"
+        }
+      ]
+    }
   }
   </script>
 
-  <link rel="canonical" href="https://corebarrels.com/products" slot="head" />
+  <link rel="canonical" href={pageUrl} slot="head" />
+  <link rel="alternate" hreflang="en" href={pageUrl} slot="head" />
+  <link rel="alternate" hreflang="x-default" href={pageUrl} slot="head" />
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1>Our Core Barrels</h1>
-      <p>Engineered for performance & longevity. Designed to maximize your efficiency and minimize costs in the Rocky Mountain region.</p>
+      <h1>PDC Core Barrels for Utility Locating</h1>
+      <p>Revolutionary 4X performance technology trusted by contractors nationwide. From our Rocky Mountain headquarters, we serve all 50 states with proven results and expanding global reach.</p>
     </div>
   </section>
 
-  <!-- Products Section -->
-  <section class="products-section">
+  <!-- Products Grid -->
+  <section class="products">
     <div class="container">
       <div class="products-grid">
-        <!-- 10" Core Bit Product Card -->
+        <!-- 8" Core Barrel -->
         <div class="product-card">
-          <img src="/images/pdc-core-barrel.avif" alt="10 inch PDC Core Barrel by Weldco" class="product-photo" />
-          <div class="product-card-content">
-            <h3>10" PDC Core Bit</h3>
-            <p class="price">$1,600.00</p>
-            <p class="description">Our high-performance 10-inch core bit, delivering unmatched longevity and dry-cutting efficiency.</p>
-            <ul class="product-specs">
-              <li><span class="spec-icon">🎯</span> <strong>Cores Per Barrel:</strong> 600-800</li>
-              <li><span class="spec-icon">⚡️</span> <strong>Performance:</strong> 4X More Cores</li>
-              <li><span class="spec-icon">💧</span> <strong>Cutting:</strong> 100% Dry-Cutting</li>
-            </ul>
-            <a href="/contact" class="btn btn-primary">Request a Quote</a>
+          <div class="product-image">
+            <img src="/images/8-core-bit-2.avif" alt="8-inch PDC Core Barrel for utility locating" />
+          </div>
+          <div class="product-info">
+            <h2>8" PDC Core Barrel</h2>
+            <div class="price">$2,500</div>
+            <div class="specs">
+              <h3>Specifications:</h3>
+              <ul>
+                <li><strong>Diameter:</strong> 8 inches</li>
+                <li><strong>Cores Per Barrel:</strong> 600-800</li>
+                <li><strong>Technology:</strong> PDC (Polycrystalline Diamond Compact)</li>
+                <li><strong>Water Required:</strong> No - Dry-cutting technology</li>
+                <li><strong>Rebuildable:</strong> Yes - 10-day turnaround</li>
+                <li><strong>Warranty:</strong> 30 days</li>
+              </ul>
+            </div>
+            <div class="features">
+              <h3>Key Features:</h3>
+              <ul>
+                <li>4X more cores than industry standard</li>
+                <li>Perfect for Rocky Mountain winters</li>
+                <li>Superior core quality</li>
+                <li>Reduced project time</li>
+                <li>Lower total cost of ownership</li>
+              </ul>
+            </div>
+            <a href="/contact" class="btn btn-primary">Get Quote</a>
           </div>
         </div>
-        
-        <!-- 8" Core Bit Product Card -->
+
+        <!-- 10" Core Barrel -->
         <div class="product-card">
-          <img src="/images/product-8-inch.avif" alt="8 inch PDC Core Barrel by Weldco" class="product-photo" />
-          <div class="product-card-content">
-            <h3>8" PDC Core Bit</h3>
-            <p class="price">$1,400.00</p>
-            <p class="description">The versatile 8-inch core bit, perfect for a wide range of utility locating applications.</p>
-            <ul class="product-specs">
-              <li><span class="spec-icon">🎯</span> <strong>Cores Per Barrel:</strong> 600-800</li>
-              <li><span class="spec-icon">⚡️</span> <strong>Performance:</strong> 4X More Cores</li>
-              <li><span class="spec-icon">💧</span> <strong>Cutting:</strong> 100% Dry-Cutting</li>
-            </ul>
-            <a href="/contact" class="btn btn-primary">Request a Quote</a>
+          <div class="product-image">
+            <img src="/images/10-core-bit-2.avif" alt="10-inch PDC Core Barrel for utility locating" />
+          </div>
+          <div class="product-info">
+            <h2>10" PDC Core Barrel</h2>
+            <div class="price">$3,200</div>
+            <div class="specs">
+              <h3>Specifications:</h3>
+              <ul>
+                <li><strong>Diameter:</strong> 10 inches</li>
+                <li><strong>Cores Per Barrel:</strong> 600-800</li>
+                <li><strong>Technology:</strong> PDC (Polycrystalline Diamond Compact)</li>
+                <li><strong>Water Required:</strong> No - Dry-cutting technology</li>
+                <li><strong>Rebuildable:</strong> Yes - 10-day turnaround</li>
+                <li><strong>Warranty:</strong> 30 days</li>
+              </ul>
+            </div>
+            <div class="features">
+              <h3>Key Features:</h3>
+              <ul>
+                <li>4X more cores than industry standard</li>
+                <li>Perfect for Rocky Mountain winters</li>
+                <li>Superior core quality</li>
+                <li>Reduced project time</li>
+                <li>Lower total cost of ownership</li>
+              </ul>
+            </div>
+            <a href="/contact" class="btn btn-primary">Get Quote</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Rebuild Program Section -->
-  <section class="rebuild-program">
+  <!-- Rebuild Service -->
+  <section class="rebuild-service">
     <div class="container">
-      <div class="section-header">
-        <h2>Extend Barrel Life with Our Rebuild Program</h2>
-        <p>Maximize your investment with our professional restoration service. It's the smart, cost-effective alternative to frequent replacement.</p>
-      </div>
-      
-      <div class="rebuild-grid">
-        <div class="rebuild-card">
-          <div class="rebuild-icon">💰</div>
-          <h3>Significant Cost Savings</h3>
-          <p>Restore your barrel to peak performance for a fraction of the cost of a new one. Multiple rebuilds possible per barrel.</p>
+      <div class="rebuild-content">
+        <h2>Rebuild Service</h2>
+        <p>Extend the life of your core barrels with our professional rebuild service. 10-day turnaround keeps your projects moving forward.</p>
+        <div class="rebuild-features">
+          <div class="rebuild-feature">
+            <h3>10-Day Turnaround</h3>
+            <p>Quick rebuild service to minimize downtime</p>
+          </div>
+          <div class="rebuild-feature">
+            <h3>Cost Effective</h3>
+            <p>Rebuild at a fraction of replacement cost</p>
+          </div>
+          <div class="rebuild-feature">
+            <h3>Warranty Included</h3>
+            <p>30-day warranty on all rebuilds</p>
+          </div>
         </div>
-        <div class="rebuild-card">
-          <div class="rebuild-icon">⏱️</div>
-          <h3>10-Day Turnaround</h3>
-          <p>We understand that downtime costs money. Our efficient process ensures you get your rebuilt barrel back in 10 business days or less.</p>
-        </div>
-        <div class="rebuild-card">
-          <div class="rebuild-icon">✅</div>
-          <h3>Quality Guaranteed</h3>
-          <p>Our expert technicians use high-quality materials to ensure your rebuilt barrel meets or exceeds original performance standards.</p>
-        </div>
-      </div>
-      
-      <div class="rebuild-cta">
-        <p>Ready to start a rebuild? Contact us to schedule your service.</p>
-        <a href="/contact" class="btn btn-secondary">Initiate Rebuild</a>
+        <a href="/contact" class="btn btn-outline">Schedule Rebuild</a>
       </div>
     </div>
   </section>
@@ -134,9 +351,12 @@ const pageDescription = "Explore our 8-inch and 10-inch PDC core barrels, engine
   <!-- CTA Section -->
   <section class="cta">
     <div class="container">
-      <h2>Upgrade Your Coring Operation Today</h2>
-      <p>Equip your team with the best PDC core barrels in the Rocky Mountain region. Contact us for a quote or to learn more about our products.</p>
-      <a href="/contact" class="btn btn-white">Get Your Free Quote</a>
+      <h2>Ready to Order?</h2>
+      <p>Get a free quote for PDC core barrels or schedule a rebuild. Nationwide shipping available with proven performance across all 50 states.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-white">Get Free Quote</a>
+        <a href="tel:4358286330" class="btn btn-outline">Call (435) 828-6330</a>
+      </div>
     </div>
   </section>
 </Layout>
@@ -190,59 +410,83 @@ const pageDescription = "Explore our 8-inch and 10-inch PDC core barrels, engine
     box-shadow: var(--shadow-xl);
   }
   
-  .product-photo {
+  .product-image {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .product-image img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    transition: transform 0.3s ease;
   }
   
-  .product-card-content {
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+  
+  .product-info {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
   
-  .product-card-content h3 {
+  .product-info h2 {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-family: 'Space Grotesk', sans-serif;
+    color: var(--gray-900);
   }
   
-  .product-card-content .price {
+  .price {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 1rem;
   }
   
-  .product-card-content .description {
-    color: var(--gray-600);
-    line-height: 1.6;
+  .specs, .features {
     margin-bottom: 1.5rem;
-    flex-grow: 1;
   }
   
-  .product-specs {
+  .specs h3, .features h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--gray-800);
+  }
+  
+  .specs ul, .features ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 1.5rem;
+    margin: 0;
   }
-
-  .product-specs li {
+  
+  .specs li, .features li {
     font-size: 0.95rem;
     color: var(--gray-700);
     margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
   }
-
-  .spec-icon {
-      font-size: 1.1rem;
+  
+  .specs li::before, .features li::before {
+    content: '•';
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
   }
-
+  
+  .product-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  
   .product-card-content .btn {
     width: 100%;
     margin-top: auto;
@@ -254,14 +498,40 @@ const pageDescription = "Explore our 8-inch and 10-inch PDC core barrels, engine
     background: var(--gray-50);
   }
   
-  .rebuild-grid {
+  .rebuild-service {
+    padding: 6rem 0;
+    background: var(--gray-50);
+  }
+  
+  .rebuild-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .rebuild-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--gray-900);
+  }
+  
+  .rebuild-content > p {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+    margin-bottom: 3rem;
+    line-height: 1.7;
+  }
+  
+  .rebuild-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
   }
   
-  .rebuild-card {
+  .rebuild-feature {
     background: var(--white);
     padding: 2rem;
     border-radius: 1rem;
@@ -270,29 +540,23 @@ const pageDescription = "Explore our 8-inch and 10-inch PDC core barrels, engine
     border-top: 4px solid var(--primary);
   }
   
-  .rebuild-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .rebuild-card h3 {
-    font-size: 1.5rem;
+  .rebuild-feature h3 {
+    font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    color: var(--gray-900);
   }
   
-  .rebuild-card p {
+  .rebuild-feature p {
     color: var(--gray-600);
-    line-height: 1.7;
+    line-height: 1.6;
   }
   
-  .rebuild-cta {
-    text-align: center;
-  }
-  
-  .rebuild-cta p {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+  .rebuild-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
   }
   
   /* CTA Section */
@@ -324,13 +588,39 @@ const pageDescription = "Explore our 8-inch and 10-inch PDC core barrels, engine
     .hero, .products-section, .rebuild-program, .cta {
       padding: 4rem 0;
     }
+    .rebuild-service {
+      padding: 4rem 0;
+    }
   }
 
   @media (max-width: 768px) {
     .hero h1 { font-size: 2.25rem; }
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .rebuild-features {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .rebuild-content h2 {
+      font-size: 2rem;
+    }
   }
 
   @media (max-width: 480px) {
     .hero h1 { font-size: 2rem; }
+    .product-info h2 {
+      font-size: 1.5rem;
+    }
+    .price {
+      font-size: 1.25rem;
+    }
+    .rebuild-content h2 {
+      font-size: 1.75rem;
+    }
+    .rebuild-feature {
+      padding: 1.5rem;
+    }
   }
 </style> 

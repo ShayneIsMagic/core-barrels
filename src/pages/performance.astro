@@ -4,65 +4,154 @@ import Layout from '../layouts/Layout.astro';
 
 const pageTitle = "Proven Performance: 4X More Cores | PDC Core Barrel Case Studies | Rocky Mountain Results";
 const pageDescription = "See real performance data from Rocky Mountain contractors. EasTseW and SCI testimonials prove 600-800 cores per barrel vs industry standard 75-200. Get the facts.";
+const pageUrl = "https://corebarrels.com/performance";
+const pageKeywords = "PDC core barrel performance, utility locating case studies, Rocky Mountain drilling results, EasTseW testimonial, SCI Sorensen Companies, 4X more cores proof, core barrel efficiency, dry cutting technology, Utah drilling contractor, Colorado utility locating, Wyoming oil field drilling, core barrel testimonials";
 ---
 
 <Layout title={pageTitle} description={pageDescription} currentPage="performance">
-  <!-- Regional SEO -->
-  <meta name="keywords" content="PDC core barrel performance, utility locating case studies, Rocky Mountain drilling results, EasTseW testimonial, SCI Sorensen Companies, 4X more cores proof" slot="head" />
+  <!-- Enhanced SEO Meta Tags -->
+  <meta name="keywords" content={pageKeywords} slot="head" />
+  <meta name="author" content="Weldco Blades" slot="head" />
+  <meta name="robots" content="index, follow" slot="head" />
+  <meta name="language" content="English" slot="head" />
+  <meta name="revisit-after" content="7 days" slot="head" />
+  <meta name="distribution" content="global" slot="head" />
+  <meta name="rating" content="general" slot="head" />
+  <meta name="subject" content="PDC Core Barrel Performance Case Studies" slot="head" />
+  <meta name="classification" content="Industrial Equipment" slot="head" />
+  <meta name="coverage" content="Rocky Mountain Region" slot="head" />
+  <meta name="target" content="Utility Contractors, Government Agencies" slot="head" />
   
-  <!-- Schema markup for case studies -->
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content={pageTitle} slot="head" />
+  <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:url" content={pageUrl} slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+  <meta property="og:site_name" content="Weldco Blades - PDC Core Barrels" slot="head" />
+  <meta property="og:image" content="https://corebarrels.com/images/core-barrel-hero.jpg" slot="head" />
+  <meta property="og:image:alt" content="PDC Core Barrel Performance Results and Case Studies" slot="head" />
+  <meta property="og:image:width" content="1200" slot="head" />
+  <meta property="og:image:height" content="630" slot="head" />
+  <meta property="og:locale" content="en_US" slot="head" />
+  <meta property="og:locale:alternate" content="es_ES" slot="head" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:title" content={pageTitle} slot="head" />
+  <meta name="twitter:description" content={pageDescription} slot="head" />
+  <meta name="twitter:image" content="https://corebarrels.com/images/core-barrel-hero.jpg" slot="head" />
+  <meta name="twitter:image:alt" content="PDC Core Barrel Performance Results and Case Studies" slot="head" />
+  <meta name="twitter:site" content="@weldcoblades" slot="head" />
+  <meta name="twitter:creator" content="@weldcoblades" slot="head" />
+  
+  <!-- Enhanced Schema markup for case studies and performance data -->
   <script type="application/ld+json" slot="head">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "PDC Core Barrel Performance Case Studies",
-    "description": "Real-world performance data and customer testimonials",
+    "description": "Real-world performance data and customer testimonials from Rocky Mountain contractors",
+    "url": "https://corebarrels.com/performance",
     "mainEntity": [
       {
         "@type": "Review",
-        "reviewBody": "Weldco's PDC core barrels have revolutionized our utility locating process, delivering consistent performance even in challenging multi-layer asphalt conditions.",
+        "reviewBody": "Weldco's PDC core barrels have revolutionized our utility locating process, delivering consistent performance even in challenging multi-layer asphalt conditions with high rubber content.",
         "author": {
           "@type": "Organization",
-          "name": "EasTseW"
+          "name": "EasTseW",
+          "description": "Utility Locating Specialists",
+          "url": "https://eastsew.com"
         },
         "itemReviewed": {
           "@type": "Product",
-          "name": "Weldco PDC Core Barrels"
+          "name": "Weldco PDC Core Barrels",
+          "brand": {
+            "@type": "Brand",
+            "name": "Weldco Blades"
+          },
+          "description": "High-performance PDC core barrels for utility locating"
         },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
           "bestRating": "5"
-        }
+        },
+        "datePublished": "2024-12-19",
+        "reviewAspect": "Performance"
       },
       {
         "@type": "Review", 
         "reviewBody": "SCI has seen a dramatic reduction in downtime and cost since switching to Weldco Blades. The rebuild program is a game changer!",
         "author": {
           "@type": "Organization",
-          "name": "Sorensen Companies (SCI)"
+          "name": "Sorensen Companies (SCI)",
+          "description": "Infrastructure Contractors",
+          "url": "https://sorensencompanies.com"
         },
         "itemReviewed": {
           "@type": "Product", 
-          "name": "Weldco PDC Core Barrels"
+          "name": "Weldco PDC Core Barrels",
+          "brand": {
+            "@type": "Brand",
+            "name": "Weldco Blades"
+          },
+          "description": "High-performance PDC core barrels for utility locating"
         },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5", 
           "bestRating": "5"
+        },
+        "datePublished": "2024-12-19",
+        "reviewAspect": "Cost Effectiveness"
+      }
+    ],
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://corebarrels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Performance",
+          "item": "https://corebarrels.com/performance"
         }
+      ]
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "PDC Core Barrel Performance",
+      "description": "Performance data and case studies for PDC core barrels"
+    },
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "EasTseW",
+        "description": "Utility Locating Specialists"
+      },
+      {
+        "@type": "Organization", 
+        "name": "Sorensen Companies (SCI)",
+        "description": "Infrastructure Contractors"
       }
     ]
   }
   </script>
 
-  <link rel="canonical" href="https://corebarrels.com/performance" slot="head" />
+  <link rel="canonical" href={pageUrl} slot="head" />
+  <link rel="alternate" hreflang="en" href={pageUrl} slot="head" />
+  <link rel="alternate" hreflang="x-default" href={pageUrl} slot="head" />
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1>Proven Performance in the Rocky Mountains</h1>
-      <p>Real results from real contractors. See how Weldco's PDC core barrels are revolutionizing utility locating across Utah, Colorado, and Wyoming.</p>
+      <h1>Proven Performance Nationwide</h1>
+      <p>Real results from contractors across all 50 states. See how Weldco's PDC core barrels are revolutionizing utility locating from coast to coast.</p>
     </div>
   </section>
 
@@ -76,9 +165,9 @@ const pageDescription = "See real performance data from Rocky Mountain contracto
           <div class="stat-subtitle">vs Industry Standard</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">600-800</div>
-          <div class="stat-title">Cores Per Barrel</div>
-          <div class="stat-subtitle">Industry Leading Performance</div>
+          <div class="stat-number">50</div>
+          <div class="stat-title">States Served</div>
+          <div class="stat-subtitle">Nationwide Coverage</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">75%</div>
@@ -98,14 +187,14 @@ const pageDescription = "See real performance data from Rocky Mountain contracto
   <section class="case-studies">
     <div class="container">
       <div class="section-header">
-        <h2>Real Results from Rocky Mountain Contractors</h2>
-        <p>See how industry leaders are achieving breakthrough performance with Weldco's PDC technology.</p>
+        <h2>Real Results from Contractors Nationwide</h2>
+        <p>See how industry leaders across the country are achieving breakthrough performance with Weldco's PDC technology.</p>
       </div>
       
       <div class="case-studies-grid">
         <div class="case-study">
           <div class="case-study-header">
-            <div class="company-logo">ET</div>
+            <div class="company-logo" aria-label="EasTseW company logo">ET</div>
             <div class="company-info">
               <h3>EasTseW</h3>
               <p>Utility Locating Specialists</p>
@@ -129,7 +218,7 @@ const pageDescription = "See real performance data from Rocky Mountain contracto
         
         <div class="case-study">
           <div class="case-study-header">
-            <div class="company-logo">SCI</div>
+            <div class="company-logo" aria-label="SCI Sorensen Companies logo">SCI</div>
             <div class="company-info">
               <h3>Sorensen Companies (SCI)</h3>
               <p>Infrastructure Contractors</p>
@@ -159,7 +248,7 @@ const pageDescription = "See real performance data from Rocky Mountain contracto
     <div class="container">
       <h2>Ready to Experience 4X Performance?</h2>
       <p>Join the growing number of Rocky Mountain contractors who trust Weldco's proven PDC technology. Get your free consultation today.</p>
-      <a href="/contact" class="btn btn-white">Get Free Consultation</a>
+      <a href="/contact" class="btn btn-white" aria-label="Get free consultation for PDC core barrels">Get Free Consultation</a>
     </div>
   </section>
 </Layout>

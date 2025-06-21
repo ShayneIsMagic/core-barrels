@@ -1,0 +1,27 @@
+{
+  "name": "Weldco Blades - PDC Core Barrels",
+  "short_name": "Weldco Blades",
+  "description": "High-performance PDC core barrels for utility locating and drilling contractors in the Rocky Mountain region",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1f2937",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/weldco-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/weldco-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "industrial", "construction"],
+  "lang": "en-US",
+  "dir": "ltr"
+} 
