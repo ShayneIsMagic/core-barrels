@@ -1,0 +1,543 @@
+---
+// src/pages/contact.astro
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Contact Weldco Blades for PDC Core Barrels | Utah, CO, WY";
+const pageDescription = "Request a free quote for PDC core barrels or schedule a rebuild. Contact Weldco Blades in Vernal, UT at (435) 828-6330. Serving the Rocky Mountain region.";
+---
+
+<Layout title={pageTitle} description={pageDescription} currentPage="contact">
+  <!-- SEO Meta -->
+  <meta name="keywords" content="contact Weldco Blades, PDC core barrel quote, core barrel rebuild service, Vernal Utah, Rocky Mountain drilling supplier" slot="head" />
+
+  <!-- Schema for Contact Page -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Weldco Blades",
+      "telephone": "+1-435-828-6330",
+      "email": "sales@weldcoblades.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1130 East Highway 40",
+        "addressLocality": "Vernal",
+        "addressRegion": "UT",
+        "postalCode": "84078",
+        "addressCountry": "US"
+      },
+      "areaServed": ["US-UT", "US-CO", "US-WY", "US-ID", "US-MT"]
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://corebarrels.com/contact" slot="head" />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>Ready for a quote, have a question, or need to schedule a rebuild? We're here to help.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p>We serve contractors across the Rocky Mountain region. Reach out today for a same-day response.</p>
+        
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <h3>Phone</h3>
+            <a href="tel:4358286330">(435) 828-6330</a>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:sales@weldcoblades.com">sales@weldcoblades.com</a>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <h3>Address</h3>
+            <p>1130 East Highway 40<br>Vernal, UT 84078</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">⏰</div>
+          <div>
+            <h3>Business Hours</h3>
+            <p>Monday - Friday: 8am - 5pm</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="contact-form-container">
+        <h2>Send Us a Message</h2>
+        <form name="contact" method="POST" data-netlify="true" class="contact-form" id="contact-form">
+          <input type="hidden" name="form-name" value="contact" />
+          
+          <!-- Honeypot fields to catch bots -->
+          <div class="honeypot-field" style="display: none;">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            <input type="email" name="email-confirm" tabindex="-1" autocomplete="off" />
+            <input type="text" name="phone-confirm" tabindex="-1" autocomplete="off" />
+          </div>
+          
+          <!-- Timestamp for rate limiting -->
+          <input type="hidden" name="timestamp" id="form-timestamp" />
+          
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required minlength="2" maxlength="100" pattern="[A-Za-z\s\-']{2,100}" />
+            <div class="error-message" id="name-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required maxlength="254" />
+            <div class="error-message" id="email-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" pattern="[\+]?[0-9\s\-\(\)]{10,20}" maxlength="20" />
+            <div class="error-message" id="phone-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="interest">I'm interested in... *</label>
+            <select id="interest" name="interest" required>
+              <option value="" disabled selected>Please select an option...</option>
+              <option value="quote-10-inch">Quote for 10" Core Bit</option>
+              <option value="quote-8-inch">Quote for 8" Core Bit</option>
+              <option value="quote-custom">Custom Bit Request</option>
+              <option value="rebuild">Scheduling a Rebuild</option>
+              <option value="question">General Question</option>
+              <option value="other">Other</option>
+            </select>
+            <div class="error-message" id="interest-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="shipping-address">Shipping Address (for quotes or rebuilds) *</label>
+            <textarea id="shipping-address" name="shipping-address" rows="3" required minlength="10" maxlength="500"></textarea>
+            <div class="error-message" id="shipping-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required minlength="10" maxlength="2000"></textarea>
+            <div class="error-message" id="message-error"></div>
+          </div>
+          
+          <!-- Simple CAPTCHA -->
+          <div class="form-group captcha-group">
+            <label for="captcha">Security Check: What is 3 + 7? *</label>
+            <input type="number" id="captcha" name="captcha" required min="0" max="20" />
+            <div class="error-message" id="captcha-error"></div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" id="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loading" style="display: none;">Sending...</span>
+          </button>
+          
+          <div class="form-status" id="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.03364239247!2d-109.510363684602!3d40.4524299793608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874fb3e2efe97b27%3A0x6b6c0e5a1976a444!2s1130%20E%20Hwy%2040%2C%20Vernal%2C%20UT%2084078!5e0!3m2!1sen!2sus!4v1678886432109!5m2!1sen!2sus"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Weldco Blades Location Map"
+      ></iframe>
+      <img src="/images/weldco-location.jpg" alt="Weldco Blades physical location" class="map-hover-image" />
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Anti-spam and form validation
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    const formStatus = document.getElementById('form-status');
+    
+    // Set timestamp for rate limiting
+    document.getElementById('form-timestamp').value = Date.now();
+    
+    // Rate limiting - prevent multiple submissions
+    let isSubmitting = false;
+    let lastSubmissionTime = 0;
+    const MIN_SUBMISSION_INTERVAL = 30000; // 30 seconds
+    
+    // Form validation
+    function validateForm() {
+      let isValid = true;
+      
+      // Clear previous errors
+      document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+      
+      // Name validation
+      const name = document.getElementById('name').value.trim();
+      if (name.length < 2) {
+        document.getElementById('name-error').textContent = 'Name must be at least 2 characters long';
+        isValid = false;
+      }
+      
+      // Email validation
+      const email = document.getElementById('email').value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById('email-error').textContent = 'Please enter a valid email address';
+        isValid = false;
+      }
+      
+      // Phone validation (optional)
+      const phone = document.getElementById('phone').value.trim();
+      if (phone && !/^[\+]?[0-9\s\-\(\)]{10,20}$/.test(phone)) {
+        document.getElementById('phone-error').textContent = 'Please enter a valid phone number';
+        isValid = false;
+      }
+      
+      // CAPTCHA validation
+      const captcha = document.getElementById('captcha').value;
+      if (captcha !== '10') {
+        document.getElementById('captcha-error').textContent = 'Please enter the correct answer';
+        isValid = false;
+      }
+      
+      return isValid;
+    }
+    
+    // Honeypot detection
+    function checkHoneypot() {
+      const honeypotFields = ['website', 'email-confirm', 'phone-confirm'];
+      return honeypotFields.every(field => {
+        const input = form.querySelector(`[name="${field}"]`);
+        return !input || input.value === '';
+      });
+    }
+    
+    // Rate limiting check
+    function checkRateLimit() {
+      const now = Date.now();
+      if (now - lastSubmissionTime < MIN_SUBMISSION_INTERVAL) {
+        const remainingTime = Math.ceil((MIN_SUBMISSION_INTERVAL - (now - lastSubmissionTime)) / 1000);
+        formStatus.innerHTML = `<div class="error">Please wait ${remainingTime} seconds before submitting again.</div>`;
+        return false;
+      }
+      return true;
+    }
+    
+    // Form submission handler
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (isSubmitting) {
+        return;
+      }
+      
+      // Clear previous status
+      formStatus.innerHTML = '';
+      
+      // Validate form
+      if (!validateForm()) {
+        return;
+      }
+      
+      // Check honeypot
+      if (!checkHoneypot()) {
+        formStatus.innerHTML = '<div class="error">Invalid submission detected.</div>';
+        return;
+      }
+      
+      // Check rate limiting
+      if (!checkRateLimit()) {
+        return;
+      }
+      
+      // Show loading state
+      isSubmitting = true;
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline';
+      submitBtn.disabled = true;
+      
+      // Simulate form processing (remove this in production)
+      setTimeout(() => {
+        // Reset form
+        form.reset();
+        document.getElementById('form-timestamp').value = Date.now();
+        
+        // Show success message
+        formStatus.innerHTML = '<div class="success">Thank you! Your message has been sent successfully. We\'ll get back to you soon.</div>';
+        
+        // Reset button state
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+        submitBtn.disabled = false;
+        isSubmitting = false;
+        lastSubmissionTime = Date.now();
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          formStatus.innerHTML = '';
+        }, 5000);
+      }, 2000);
+    });
+    
+    // Real-time validation
+    const inputs = form.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+      input.addEventListener('blur', function() {
+        validateForm();
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--black) 0%, var(--gray-800) 100%);
+    color: var(--white);
+    padding: 6rem 0;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--gray-300);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    padding: 6rem 0;
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+  
+  .contact-info h2, .contact-form-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .contact-info p {
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .info-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    width: 3rem;
+    height: 3rem;
+    background: var(--gray-100);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .info-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .info-item p, .info-item a {
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .info-item a:hover {
+    color: var(--primary);
+  }
+  
+  /* Contact Form */
+  .contact-form-container {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--gray-700);
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 0.875rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary-light);
+  }
+  
+  .form-group input.error,
+  .form-group textarea.error,
+  .form-group select.error {
+    border-color: #dc2626;
+  }
+  
+  .error-message {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    min-height: 1.25rem;
+  }
+  
+  .form-status {
+    margin-top: 1rem;
+  }
+  
+  .form-status .success {
+    color: #059669;
+    background: #d1fae5;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #a7f3d0;
+  }
+  
+  .form-status .error {
+    color: #dc2626;
+    background: #fef2f2;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #fecaca;
+  }
+  
+  .captcha-group {
+    background: var(--gray-50);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray-200);
+  }
+  
+  .captcha-group label {
+    color: var(--gray-700);
+    font-weight: 600;
+  }
+  
+  /* Honeypot fields - hidden from users but visible to bots */
+  .honeypot-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  /* Map Section */
+  .map-section {
+    padding-bottom: 0; /* No padding at bottom */
+  }
+  
+  .map-container {
+    position: relative;
+    line-height: 0; /* Removes extra space below iframe */
+  }
+  
+  .map-hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    pointer-events: none; /* Allows clicks to go through to the map */
+  }
+  
+  .map-container:hover .map-hover-image {
+    opacity: 1;
+  }
+
+  .map-section iframe {
+    display: block;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .hero, .contact-section { padding: 4rem 0; }
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero h1 { font-size: 2.25rem; }
+    .contact-form-container {
+      padding: 1.5rem;
+    }
+  }
+</style> 

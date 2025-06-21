@@ -1,0 +1,833 @@
+---
+// src/pages/products.astro
+export const prerender = true;
+
+const title = "PDC Core Barrels 2\", 4\", 6\" Sizes | Utah, Colorado, Wyoming Drilling Equipment | Weldco Blades"
+const description = "Professional PDC core barrels in 2\", 4\", and 6\" sizes. Serving Rocky Mountain contractors in Utah, Colorado, Wyoming with superior dry-cutting technology. Custom sizes available."
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  
+  <!-- Regional SEO -->
+  <meta name="keywords" content="2 inch core barrel, 4 inch core barrel, 6 inch core barrel, PDC drilling Utah, Colorado drilling equipment, Wyoming utility locating, Rocky Mountain core barrels">
+  <meta name="geo.region" content="US-UT">
+  <meta name="geo.placename" content="Rocky Mountain Region">
+  
+  <!-- Schema markup for products -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "PDC Core Barrels",
+    "description": "Professional PDC core barrels for utility locating and infrastructure work",
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "position": 1,
+        "name": "2\" PDC Core Barrel",
+        "description": "Compact precision core barrel for tight spaces",
+        "brand": "Weldco Blades",
+        "category": "Drilling Equipment",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "USD",
+          "seller": {
+            "@type": "Organization",
+            "name": "Weldco Blades"
+          }
+        }
+      },
+      {
+        "@type": "Product", 
+        "position": 2,
+        "name": "4\" PDC Core Barrel",
+        "description": "Flagship core barrel with 600-800 core capacity",
+        "brand": "Weldco Blades",
+        "category": "Drilling Equipment",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock", 
+          "priceCurrency": "USD",
+          "seller": {
+            "@type": "Organization",
+            "name": "Weldco Blades"
+          }
+        }
+      },
+      {
+        "@type": "Product",
+        "position": 3, 
+        "name": "6\" PDC Core Barrel",
+        "description": "Heavy-duty core barrel for large-scale projects",
+        "brand": "Weldco Blades",
+        "category": "Drilling Equipment",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "USD", 
+          "seller": {
+            "@type": "Organization",
+            "name": "Weldco Blades"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="canonical" href="https://corebarrels.com/products">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #D74827;
+      --primary-dark: #B83A20;
+      --primary-light: #E86B52;
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--gray-900);
+      background: var(--white);
+    }
+    
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Header */
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+    }
+    
+    .brand-text h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .brand-text p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 2rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .btn-secondary {
+      background: var(--white);
+      color: var(--gray-800);
+      border: 2px solid var(--gray-200);
+      box-shadow: var(--shadow);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gray-50);
+      border-color: var(--gray-300);
+      transform: translateY(-1px);
+    }
+    
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+      color: var(--white);
+      padding: 6rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/images/pattern.svg') repeat;
+      opacity: 0.05;
+    }
+    
+    .page-header-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .page-header p {
+      font-size: 1.25rem;
+      color: var(--gray-300);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Search and Filter */
+    .search-filter {
+      background: var(--gray-50);
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .search-container {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .search-input {
+      padding: 0.875rem 1.25rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      min-width: 300px;
+      transition: all 0.3s ease;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(215, 72, 39, 0.1);
+    }
+    
+    .filter-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .filter-tag {
+      padding: 0.5rem 1rem;
+      background: var(--white);
+      border: 2px solid var(--gray-200);
+      border-radius: 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-tag:hover,
+    .filter-tag.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    
+    /* Products Grid */
+    .products {
+      padding: 4rem 0;
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .product-card {
+      background: var(--white);
+      border-radius: 1rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid var(--gray-200);
+      position: relative;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-light);
+    }
+    
+    .product-image {
+      position: relative;
+      height: 250px;
+      background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-50) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    
+    .product-content {
+      padding: 2rem;
+    }
+    
+    .product-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--gray-900);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .product-subtitle {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .product-description {
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .product-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    
+    .product-features li {
+      color: var(--gray-700);
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    
+    .product-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .product-specs {
+      background: var(--gray-50);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .product-specs h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--gray-900);
+    }
+    
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+    }
+    
+    .spec-label {
+      color: var(--gray-600);
+    }
+    
+    .spec-value {
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+    
+    .product-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    /* Regional Info */
+    .regional-info {
+      background: var(--primary);
+      color: var(--white);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .regional-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .regional-content p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .region-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    .region-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .region-card p {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+    
+    /* Custom Sizes */
+    .custom-sizes {
+      background: var(--gray-50);
+      padding: 4rem 0;
+    }
+    
+    .custom-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .custom-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--gray-900);
+    }
+    
+    .custom-content p {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 2rem;
+      }
+      
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .search-input {
+        min-width: 100%;
+      }
+      
+      .product-actions {
+        flex-direction: column;
+      }
+      
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav {
+        display: none;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-on-scroll {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-section">
+        <img src="/images/weldco-logo.png" alt="Weldco Blades Logo" class="logo" width="48" height="48">
+        <div class="brand-text">
+          <h1>CoreBarrels.com</h1>
+          <p>Powered by Weldco Blades</p>
+        </div>
+      </div>
+      
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/products" class="active">Products</a>
+        <a href="/performance">Performance</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      
+      <a href="#contact" class="btn btn-primary">Request Quote</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container page-header-content">
+      <h1>Professional PDC Core Barrels</h1>
+      <p>Industry-leading core barrels in 2", 4", and 6" sizes. Built tough for Rocky Mountain contractors with superior performance and dry-cutting capability.</p>
+    </div>
+  </section>
+
+  <!-- Search and Filter -->
+  <section class="search-filter">
+    <div class="container search-container">
+      <input type="text" class="search-input" placeholder="Search core barrels by size, application, or feature..." id="product-search">
+      <div class="filter-tags">
+        <span class="filter-tag active" data-filter="all">All Sizes</span>
+        <span class="filter-tag" data-filter="2-inch">2" Barrels</span>
+        <span class="filter-tag" data-filter="4-inch">4" Barrels</span>
+        <span class="filter-tag" data-filter="6-inch">6" Barrels</span>
+        <span class="filter-tag" data-filter="custom">Custom</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="products">
+    <div class="container">
+      <div class="products-grid" id="products-grid">
+        
+        <!-- 2" PDC Core Barrel -->
+        <div class="product-card animate-on-scroll" data-category="2-inch">
+          <div class="product-image">
+            <img src="/images/2-inch-core-barrel.jpg" alt="2 inch PDC Core Barrel" width="350" height="250" loading="lazy">
+            <div class="product-badge">Precision</div>
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">2" PDC Core Barrel</h3>
+            <div class="product-subtitle">Compact Precision Design</div>
+            <p class="product-description">Perfect for precision utility locating in tight spaces and confined areas. Ideal for residential and small commercial projects throughout the Rocky Mountain region.</p>
+            
+            <ul class="product-features">
+              <li>Compact design for tight spaces</li>
+              <li>Superior PDC cutting technology</li>
+              <li>Dry-cutting capability</li>
+              <li>Rebuildable design</li>
+              <li>Cold weather performance</li>
+            </ul>
+            
+            <div class="product-specs">
+              <h4>Technical Specifications</h4>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Diameter:</span>
+                  <span class="spec-value">2.0"</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Core Capacity:</span>
+                  <span class="spec-value">400-600</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Material:</span>
+                  <span class="spec-value">PDC Diamond</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Cooling:</span>
+                  <span class="spec-value">Dry-Cutting</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="product-actions">
+              <a href="#contact" class="btn btn-primary">Get Quote</a>
+              <a href="/specs/2-inch" class="btn btn-secondary">View Specs</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4" PDC Core Barrel -->
+        <div class="product-card animate-on-scroll" data-category="4-inch">
+          <div class="product-image">
+            <img src="/images/4-inch-core-barrel.jpg" alt="4 inch PDC Core Barrel" width="350" height="250" loading="lazy">
+            <div class="product-badge">Flagship</div>
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">4" PDC Core Barrel</h3>
+            <div class="product-subtitle">Industry-Leading Performance</div>
+            <p class="product-description">Our flagship core barrel delivering unmatched performance with 600-800 core capacity. The industry standard for utility locating across Utah, Colorado, and Wyoming.</p>
+            
+            <ul class="product-features">
+              <li>600-800 cores per barrel</li>
+              <li>4X longer life than competitors</li>
+              <li>Superior dry-cutting performance</li>
+              <li>Multiple rebuild cycles</li>
+              <li>Proven in extreme conditions</li>
+            </ul>
+            
+            <div class="product-specs">
+              <h4>Technical Specifications</h4>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Diameter:</span>
+                  <span class="spec-value">4.0"</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Core Capacity:</span>
+                  <span class="spec-value">600-800</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Material:</span>
+                  <span class="spec-value">PDC Diamond</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Cooling:</span>
+                  <span class="spec-value">Dry-Cutting</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="product-actions">
+              <a href="#contact" class="btn btn-primary">Get Quote</a>
+              <a href="/specs/4-inch" class="btn btn-secondary">View Specs</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6" PDC Core Barrel -->
+        <div class="product-card animate-on-scroll" data-category="6-inch">
+          <div class="product-image">
+            <img src="/images/6-inch-core-barrel.jpg" alt="6 inch PDC Core Barrel" width="350" height="250" loading="lazy">
+            <div class="product-badge">Heavy-Duty</div>
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">6" PDC Core Barrel</h3>
+            <div class="product-subtitle">Heavy-Duty Performance</div>
+            <p class="product-description">Built for large-scale infrastructure projects and challenging conditions. Maximum efficiency for major utility work and commercial construction projects.</p>
+            
+            <ul class="product-features">
+              <li>Heavy-duty construction</li>
+              <li>Large-scale project capability</li>
+              <li>Enhanced cutting efficiency</li>
+              <li>Extreme weather performance</li>
+              <li>Commercial-grade durability</li>
+            </ul>
+            
+            <div class="product-specs">
+              <h4>Technical Specifications</h4>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Diameter:</span>
+                  <span class="spec-value">6.0"</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Core Capacity:</span>
+                  <span class="spec-value">500-700</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Material:</span>
+                  <span class="spec-value">PDC Diamond</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Cooling:</span>
+                  <span class="spec-value">Dry-Cutting</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="product-actions">
+              <a href="#contact" class="btn btn-primary">Get Quote</a>
+              <a href="/specs/6-inch" class="btn btn-secondary">View Specs</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Size Option -->
+        <div class="product-card animate-on-scroll" data-category="custom">
+          <div class="product-image">
+            <img src="/images/custom-core-barrel.jpg" alt="Custom PDC Core Barrel" width="350" height="250" loading="lazy">
+            <div class="product-badge">Custom</div>
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">Custom PDC Core Barrels</h3>
+            <div class="product-subtitle">Tailored Solutions</div>
+            <p class="product-description">Need a specific size or configuration? Our engineering team creates custom PDC core barrels tailored to your exact project requirements and regional conditions.</p>
+            
+            <ul class="product-features">
+              <li>Any diameter specification</li>
+              <li>Custom length options</li>
+              <li>Specialized cutting profiles</li>
+              <li>Application-specific design</li>
+              <li>Expert engineering support</li>
+            </ul>
+            
+            <div class="product-specs">
+              <h4>Custom Options</h4>
+              <div class="specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Diameter:</span>
+                  <span class="spec-value">Any Size</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Lead Time:</span>
+                  <span class="spec-value">2-4 Weeks</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Engineering:</span>
+                  <span class="spec-value">Included</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Support:</span>
+                  <span class="spec-value">Lifetime</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="product-actions">
+              <a href="#contact" class="btn btn-primary">Request Custom</a>
+              <a href="/custom-engineering" class="btn btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- No Results Message -->

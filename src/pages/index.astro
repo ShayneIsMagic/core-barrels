@@ -1,0 +1,496 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "PDC Core Barrels - Cut 4X More Cores | Weldco Blades | Utah, Colorado, Wyoming";
+const pageDescription = "Revolutionary PDC core barrels for utility locating. Cut 4X more cores with dry-cutting capability. Serving Rocky Mountain region: Utah, Colorado, Wyoming, Idaho, Montana. Request quote today!";
+---
+
+<Layout title={pageTitle} description={pageDescription} currentPage="home">
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="PDC core barrels, utility locating, core drilling, dry cutting, Weldco Blades, Utah, Colorado, Wyoming, Rocky Mountain drilling, infrastructure contractors" slot="head" />
+  <meta name="geo.region" content="US-UT" slot="head" />
+  <meta name="geo.placename" content="Vernal, Utah" slot="head" />
+  <meta name="geo.position" content="40.4555;-109.5287" slot="head" />
+  <meta name="ICBM" content="40.4555, -109.5287" slot="head" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content={pageTitle} slot="head" />
+  <meta property="og:description" content={pageDescription} slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+  <meta property="og:url" content="https://corebarrels.com" slot="head" />
+  <meta property="og:image" content="/images/core-barrel-hero.jpg" slot="head" />
+  <meta property="og:locale" content="en_US" slot="head" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" slot="head" />
+  <meta name="twitter:title" content={pageTitle} slot="head" />
+  <meta name="twitter:description" content={pageDescription} slot="head" />
+  <meta name="twitter:image" content="/images/core-barrel-hero.jpg" slot="head" />
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Weldco Blades",
+    "alternateName": "CoreBarrels.com",
+    "url": "https://corebarrels.com",
+    "logo": "https://corebarrels.com/images/weldco-logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-435-828-6330",
+      "contactType": "sales",
+      "areaServed": ["US-UT", "US-CO", "US-WY", "US-ID", "US-MT"],
+      "availableLanguage": "en"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1130 East Highway 40",
+      "addressLocality": "Vernal",
+      "addressRegion": "UT",
+      "postalCode": "84078",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.4555,
+      "longitude": -109.5287
+    },
+    "sameAs": [
+      "https://www.facebook.com/people/Weldco-Blades/100092851911734/",
+      "https://www.instagram.com/weldcoblades",
+      "https://www.youtube.com/channel/UCHEBiDGNqyEJVJRqI7FeI5w",
+      "https://www.linkedin.com/company/103614972/"
+    ]
+  }
+  </script>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://corebarrels.com" slot="head" />
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h2>Cut <span class="highlight">4X More Cores</span> with Revolutionary PDC Technology</h2>
+        <p>Built tough for the Rocky Mountain region. Our PDC core barrels deliver superior longevity with dry-cutting capability and rebuildable design for utility locating professionals.</p>
+        <div class="hero-actions">
+          <a href="/contact" class="btn btn-primary">Get Free Quote</a>
+          <a href="/performance" class="btn btn-secondary">View Performance</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/images/pdc-core-barrel.avif" alt="Weldco Blades PDC Core Barrel" class="hero-main-image" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">4X</div>
+          <div class="stat-title">More Cores</div>
+          <div class="stat-subtitle">vs Industry Standard</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">600-800</div>
+          <div class="stat-title">Cores Per Barrel</div>
+          <div class="stat-subtitle">Industry Leading Performance</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10</div>
+          <div class="stat-title">Day Turnaround</div>
+          <div class="stat-subtitle">Rebuild Service</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-title">Dry-Cutting</div>
+          <div class="stat-subtitle">No Water Required</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="performance" class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Unmatched Performance for Rocky Mountain Contractors</h2>
+        <p>Revolutionary PDC technology designed for challenging conditions across Utah, Colorado, Wyoming, and beyond.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🏔️</div>
+          <h3>Rocky Mountain Tough</h3>
+          <p>Engineered specifically for extreme weather conditions and challenging terrain found throughout Utah, Colorado, Wyoming, Idaho, and Montana. Proven performance in mountain environments.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">❄️</div>
+          <h3>Winter-Ready Dry Cutting</h3>
+          <p>Unlike competitors requiring water, our proprietary PDC design eliminates freeze concerns and water supply issues. Perfect for year-round Rocky Mountain operations.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Superior Longevity</h3>
+          <p>Consistently deliver 600-800 cores per barrel vs industry standard 75-200. Multiple rebuilds possible, dramatically reducing long-term costs for contractors.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Proven Track Record</h3>
+          <p>Field-tested by industry leaders like EasTseW and Sorensen Companies across challenging multi-layer asphalt with high rubber content. Real results from real contractors.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3>Comprehensive Rebuild Program</h3>
+          <p>Extend barrel life with professional restoration at a fraction of replacement cost. Quick 10-day turnaround keeps your projects moving forward.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Local Rocky Mountain Support</h3>
+          <p>Based in Vernal, Utah with deep understanding of regional challenges. Same-day response and direct access to barrel designers for immediate problem-solving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container cta-content">
+      <h2>Ready to Cut 4X More Cores?</h2>
+      <p>Join Rocky Mountain contractors who trust Weldco's proven PDC technology. Get your free quote today and experience the difference.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-white">Get Free Quote</a>
+        <a href="tel:4358286330" class="btn btn-outline">Call (435) 828-6330</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--black) 0%, var(--gray-800) 100%);
+    color: var(--white);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.1;
+  }
+  
+  .hero-content .highlight {
+    color: var(--primary);
+    position: relative;
+  }
+  
+  .hero-content .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    border-radius: 2px;
+  }
+  
+  .hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .hero-image {
+    position: relative;
+  }
+    
+  .hero-main-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-xl);
+    border: 3px solid var(--gray-700);
+  }
+  
+  .hero-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background: linear-gradient(135deg, var(--gray-700) 0%, var(--gray-800) 100%);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-300);
+    font-size: 1.25rem;
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+  }
+  
+  /* Stats Section */
+  .stats {
+    background: var(--gray-50);
+    padding: 4rem 0;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+  
+  .stat-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    border-top: 4px solid var(--primary);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(215, 72, 39, 0.1), transparent);
+    transition: left 0.5s;
+  }
+  
+  .stat-card:hover::before {
+    left: 100%;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .stat-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--gray-900);
+  }
+  
+  .stat-subtitle {
+    color: var(--gray-600);
+  }
+  
+  /* Features Section */
+  .features {
+    padding: 6rem 0;
+  }
+    
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-200);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-light);
+  }
+  
+  .feature-icon {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--white);
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--gray-900);
+  }
+  
+  .feature-card p {
+    color: var(--gray-600);
+    line-height: 1.7;
+  }
+  
+  /* CTA Section */
+  .cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .cta-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .cta-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .cta-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .hero { padding: 4rem 0; }
+    .features { padding: 4rem 0; }
+    .cta { padding: 4rem 0; }
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+    .hero-content {
+      order: 2;
+    }
+    .hero-image {
+      order: 1;
+    }
+    .hero-actions {
+      justify-content: center;
+    }
+    .hero-content h2 {
+      font-size: 2.5rem;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    .cta-content h2 {
+      font-size: 2.25rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-content h2 { font-size: 2rem; }
+    .hero-content p { font-size: 1.125rem; }
+    .stat-number { font-size: 2.5rem; }
+    .stat-title { font-size: 1.125rem; }
+    .feature-card h3 { font-size: 1.25rem; }
+    .cta-content h2 { font-size: 1.75rem; }
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style> 

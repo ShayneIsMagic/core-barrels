@@ -1,0 +1,365 @@
+---
+// src/pages/performance.astro
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Proven Performance: 4X More Cores | PDC Core Barrel Case Studies | Rocky Mountain Results";
+const pageDescription = "See real performance data from Rocky Mountain contractors. EasTseW and SCI testimonials prove 600-800 cores per barrel vs industry standard 75-200. Get the facts.";
+---
+
+<Layout title={pageTitle} description={pageDescription} currentPage="performance">
+  <!-- Regional SEO -->
+  <meta name="keywords" content="PDC core barrel performance, utility locating case studies, Rocky Mountain drilling results, EasTseW testimonial, SCI Sorensen Companies, 4X more cores proof" slot="head" />
+  
+  <!-- Schema markup for case studies -->
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "PDC Core Barrel Performance Case Studies",
+    "description": "Real-world performance data and customer testimonials",
+    "mainEntity": [
+      {
+        "@type": "Review",
+        "reviewBody": "Weldco's PDC core barrels have revolutionized our utility locating process, delivering consistent performance even in challenging multi-layer asphalt conditions.",
+        "author": {
+          "@type": "Organization",
+          "name": "EasTseW"
+        },
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Weldco PDC Core Barrels"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Review", 
+        "reviewBody": "SCI has seen a dramatic reduction in downtime and cost since switching to Weldco Blades. The rebuild program is a game changer!",
+        "author": {
+          "@type": "Organization",
+          "name": "Sorensen Companies (SCI)"
+        },
+        "itemReviewed": {
+          "@type": "Product", 
+          "name": "Weldco PDC Core Barrels"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5", 
+          "bestRating": "5"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="canonical" href="https://corebarrels.com/performance" slot="head" />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Proven Performance in the Rocky Mountains</h1>
+      <p>Real results from real contractors. See how Weldco's PDC core barrels are revolutionizing utility locating across Utah, Colorado, and Wyoming.</p>
+    </div>
+  </section>
+
+  <!-- Performance Stats -->
+  <section class="performance-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">4X</div>
+          <div class="stat-title">More Cores</div>
+          <div class="stat-subtitle">vs Industry Standard</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">600-800</div>
+          <div class="stat-title">Cores Per Barrel</div>
+          <div class="stat-subtitle">Industry Leading Performance</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">75%</div>
+          <div class="stat-title">Cost Reduction</div>
+          <div class="stat-subtitle">vs Traditional Barrels</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-title">Customer Satisfaction</div>
+          <div class="stat-subtitle">Based on Real Reviews</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="case-studies">
+    <div class="container">
+      <div class="section-header">
+        <h2>Real Results from Rocky Mountain Contractors</h2>
+        <p>See how industry leaders are achieving breakthrough performance with Weldco's PDC technology.</p>
+      </div>
+      
+      <div class="case-studies-grid">
+        <div class="case-study">
+          <div class="case-study-header">
+            <div class="company-logo">ET</div>
+            <div class="company-info">
+              <h3>EasTseW</h3>
+              <p>Utility Locating Specialists</p>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            "Weldco's PDC core barrels have revolutionized our utility locating process. We're consistently achieving 600-800 cores per barrel, even in challenging multi-layer asphalt conditions with high rubber content."
+          </div>
+          
+          <div class="results">
+            <h4>Performance Results:</h4>
+            <ul>
+              <li>650 cores per barrel average</li>
+              <li>40% reduction in project time</li>
+              <li>Zero water requirements</li>
+              <li>Superior core quality</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="case-study">
+          <div class="case-study-header">
+            <div class="company-logo">SCI</div>
+            <div class="company-info">
+              <h3>Sorensen Companies (SCI)</h3>
+              <p>Infrastructure Contractors</p>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            "The rebuild program is a game changer! We've seen a dramatic reduction in downtime and costs since switching to Weldco Blades. The dry-cutting capability is perfect for our winter operations."
+          </div>
+          
+          <div class="results">
+            <h4>Performance Results:</h4>
+            <ul>
+              <li>700+ cores per barrel</li>
+              <li>75% cost reduction</li>
+              <li>10-day rebuild turnaround</li>
+              <li>Year-round operation capability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Experience 4X Performance?</h2>
+      <p>Join the growing number of Rocky Mountain contractors who trust Weldco's proven PDC technology. Get your free consultation today.</p>
+      <a href="/contact" class="btn btn-white">Get Free Consultation</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--black) 0%, var(--gray-800) 100%);
+    color: var(--white);
+    padding: 6rem 0;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--gray-300);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+  
+  /* Performance Stats */
+  .performance-stats {
+    padding: 4rem 0;
+    background: var(--gray-50);
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+  
+  .stat-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    border-top: 4px solid var(--primary);
+    box-shadow: var(--shadow);
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .stat-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-subtitle {
+    color: var(--gray-600);
+  }
+  
+  /* Case Studies */
+  .case-studies {
+    padding: 6rem 0;
+  }
+  
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+  
+  .case-study {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+  }
+
+  .case-study:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .case-study-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .company-logo {
+    width: 60px;
+    height: 60px;
+    background: var(--gray-100);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--gray-700);
+    font-size: 1.5rem;
+  }
+  
+  .company-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .company-info p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+  }
+  
+  .testimonial {
+    font-style: italic;
+    color: var(--gray-700);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    border-left: 3px solid var(--primary-light);
+    padding-left: 1rem;
+  }
+  
+  .results {
+    background: var(--gray-50);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--success);
+  }
+  
+  .results h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--success);
+  }
+  
+  .results ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .results li {
+    padding: 0.25rem 0;
+    color: var(--gray-700);
+  }
+  
+  .results li::before {
+    content: "✓";
+    color: var(--success);
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  /* CTA Section */
+  .cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 6rem 0;
+    text-align: center;
+  }
+  
+  .cta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .cta p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .hero { padding: 4rem 0; }
+    .case-studies { padding: 4rem 0; }
+    .cta { padding: 4rem 0; }
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.25rem; }
+    .case-studies-grid { grid-template-columns: 1fr; }
+    .cta h2 { font-size: 2rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2rem; }
+    .company-info h3 { font-size: 1.25rem; }
+  }
+</style>
