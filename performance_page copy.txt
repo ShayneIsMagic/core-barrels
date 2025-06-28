@@ -1,0 +1,1012 @@
+---
+// src/pages/performance.astro
+export const prerender = true;
+
+const title = "Proven Performance: 4X More Cores | PDC Core Barrel Case Studies | Rocky Mountain Results"
+const description = "See real performance data from Rocky Mountain contractors. EasTseW and SCI testimonials prove 600-800 cores per barrel vs industry standard 75-200. Get the facts."
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  
+  <!-- Regional SEO -->
+  <meta name="keywords" content="PDC core barrel performance, utility locating case studies, Rocky Mountain drilling results, EasTseW testimonial, SCI Sorensen Companies, 4X more cores proof">
+  
+  <!-- Schema markup for case studies -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "PDC Core Barrel Performance Case Studies",
+    "description": "Real-world performance data and customer testimonials",
+    "mainEntity": [
+      {
+        "@type": "Review",
+        "reviewBody": "Weldco's PDC core barrels have revolutionized our utility locating process, delivering consistent performance even in challenging multi-layer asphalt conditions.",
+        "author": {
+          "@type": "Organization",
+          "name": "EasTseW"
+        },
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Weldco PDC Core Barrels"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Review", 
+        "reviewBody": "SCI has seen a dramatic reduction in downtime and cost since switching to Weldco Blades. The rebuild program is a game changer!",
+        "author": {
+          "@type": "Organization",
+          "name": "Sorensen Companies (SCI)"
+        },
+        "itemReviewed": {
+          "@type": "Product", 
+          "name": "Weldco PDC Core Barrels"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5", 
+          "bestRating": "5"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="canonical" href="https://corebarrels.com/performance">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #D74827;
+      --primary-dark: #B83A20;
+      --primary-light: #E86B52;
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-300: #D1D5DB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--gray-900);
+      background: var(--white);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Header */
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+    }
+    
+    .brand-text h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .brand-text p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 2rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+      color: var(--white);
+      padding: 6rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/images/pattern.svg') repeat;
+      opacity: 0.05;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .hero .highlight {
+      color: var(--primary);
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--gray-300);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    
+    /* Performance Stats */
+    .performance-stats {
+      background: var(--white);
+      padding: 4rem 0;
+      margin-top: -2rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .stats-container {
+      background: var(--white);
+      border-radius: 1rem;
+      box-shadow: var(--shadow-xl);
+      padding: 3rem;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .stat-item {
+      position: relative;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.25rem;
+    }
+    
+    .stat-subtitle {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+    }
+    
+    /* Comparison Chart */
+    .comparison {
+      background: var(--gray-50);
+      padding: 6rem 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .section-header p {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+    }
+    
+    .comparison-chart {
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 3rem;
+      box-shadow: var(--shadow-lg);
+      overflow-x: auto;
+    }
+    
+    .chart-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    
+    .chart-table th,
+    .chart-table td {
+      padding: 1.5rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .chart-table th {
+      background: var(--gray-50);
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+    
+    .weldco-row {
+      background: rgba(215, 72, 39, 0.05);
+    }
+    
+    .weldco-row .metric {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    .competitor-row .metric {
+      color: var(--gray-600);
+    }
+    
+    .improvement {
+      background: var(--success);
+      color: var(--white);
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    
+    /* Case Studies */
+    .case-studies {
+      padding: 6rem 0;
+    }
+    
+    .case-studies-grid {
+      display: grid;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .case-study {
+      background: var(--white);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s ease;
+    }
+    
+    .case-study:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .case-study-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .case-study-logo {
+      width: 120px;
+      height: 60px;
+      background: var(--white);
+      border-radius: 0.5rem;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+    
+    .case-study-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    .case-study-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .case-study-subtitle {
+      opacity: 0.9;
+    }
+    
+    .case-study-content {
+      padding: 2rem;
+    }
+    
+    .case-study-quote {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--gray-700);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    
+    .case-study-quote::before {
+      content: '"';
+      font-size: 3rem;
+      color: var(--primary);
+      line-height: 1;
+      float: left;
+      margin-right: 0.5rem;
+      margin-top: -0.5rem;
+    }
+    
+    .case-study-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .metric-card {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--gray-50);
+      border-radius: 0.75rem;
+    }
+    
+    .metric-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .metric-label {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+    
+    /* ROI Calculator */
+    .roi-calculator {
+      background: var(--primary);
+      color: var(--white);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    
+    .calculator-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .calculator-form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 0.875rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: var(--white);
+      color: var(--gray-900);
+    }
+    
+    .roi-results {
+      background: var(--white);
+      color: var(--gray-900);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-top: 2rem;
+      display: none;
+    }
+    
+    .roi-results.show {
+      display: block;
+    }
+    
+    .savings-highlight {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--success);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    
+    /* CTA Section */
+    .cta {
+      background: var(--gray-900);
+      color: var(--white);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    
+    .cta h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    .cta p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-white {
+      background: var(--white);
+      color: var(--primary);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--gray-900);
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+      
+      .comparison-chart {
+        padding: 1.5rem;
+      }
+      
+      .case-study-content {
+        padding: 1.5rem;
+      }
+      
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav {
+        display: none;
+      }
+      
+      .cta-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .animate-on-scroll {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .animate-count {
+      animation: countUp 0.8s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-section">
+        <img src="/images/weldco-logo.png" alt="Weldco Blades Logo" class="logo" width="48" height="48">
+        <div class="brand-text">
+          <h1>CoreBarrels.com</h1>
+          <p>Powered by Weldco Blades</p>
+        </div>
+      </div>
+      
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/products">Products</a>
+        <a href="/performance" class="active">Performance</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      
+      <a href="#contact" class="btn btn-primary">Request Quote</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Proven <span class="highlight">4X Performance</span> Results</h1>
+      <p>Real data from Rocky Mountain contractors proves our PDC core barrels deliver 600-800 cores per barrel vs industry standard 75-200. See the evidence that's driving the switch to Weldco.</p>
+    </div>
+  </section>
+
+  <!-- Performance Stats -->
+  <section class="performance-stats">
+    <div class="container">
+      <div class="stats-container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" data-count="800">0</div>
+            <div class="stat-label">Cores Per Barrel</div>
+            <div class="stat-subtitle">Weldco PDC Maximum</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="200">0</div>
+            <div class="stat-label">Industry Standard</div>
+            <div class="stat-subtitle">Traditional Core Barrels</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="4">0</div>
+            <div class="stat-label">Times Longer Life</div>
+            <div class="stat-subtitle">Proven Performance</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="10">0</div>
+            <div class="stat-label">Day Rebuild</div>
+            <div class="stat-subtitle">Quick Turnaround</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Chart -->
+  <section class="comparison">
+    <div class="container">
+      <div class="section-header">
+        <h2>Head-to-Head Performance Comparison</h2>
+        <p>Independent testing and real-world results from Rocky Mountain contractors</p>
+      </div>
+      
+      <div class="comparison-chart animate-on-scroll">
+        <table class="chart-table">
+          <thead>
+            <tr>
+              <th>Performance Metric</th>
+              <th>Weldco PDC</th>
+              <th>Industry Standard</th>
+              <th>Improvement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="weldco-row">
+              <td><strong>Cores Per Barrel</strong></td>
+              <td class="metric">600-800</td>
+              <td class="metric">75-200</td>
+              <td><span class="improvement">4X More</span></td>
+            </tr>
+            <tr>
+              <td><strong>Water Required</strong></td>
+              <td class="metric">None (Dry Cutting)</td>
+              <td class="metric">Continuous</td>
+              <td><span class="improvement">100% Elimination</span></td>
+            </tr>
+            <tr class="weldco-row">
+              <td><strong>Winter Performance</strong></td>
+              <td class="metric">Full Operation</td>
+              <td class="metric">Limited/Stopped</td>
+              <td><span class="improvement">Year-Round</span></td>
+            </tr>
+            <tr>
+              <td><strong>Rebuild Capability</strong></td>
+              <td class="metric">Multiple Rebuilds</td>
+              <td class="metric">Single Use</td>
+              <td><span class="improvement">Extended Life</span></td>
+            </tr>
+            <tr class="weldco-row">
+              <td><strong>Cost Per Core</strong></td>
+              <td class="metric">75% Lower</td>
+              <td class="metric">Standard Rate</td>
+              <td><span class="improvement">Major Savings</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="case-studies">
+    <div class="container">
+      <div class="section-header">
+        <h2>Real Customer Success Stories</h2>
+        <p>Proven results from industry leaders across the Rocky Mountain region</p>
+      </div>
+      
+      <div class="case-studies-grid">
+        <!-- EasTseW Case Study -->
+        <div class="case-study animate-on-scroll">
+          <div class="case-study-header">
+            <div class="case-study-logo">
+              <img src="/images/eastwest-logo.png" alt="EasTseW Logo" width="100" height="50">
+            </div>
+            <div class="case-study-title">EasTseW Utility Solutions</div>
+            <div class="case-study-subtitle">Multi-Layer Asphalt Challenge</div>
+          </div>
+          <div class="case-study-content">
+            <div class="case-study-quote">
+              Weldco's PDC core barrels have revolutionized our utility locating process, delivering consistent performance even in challenging multi-layer asphalt conditions with high rubber content.
+            </div>
+            
+            <div class="case-study-metrics">
+              <div class="metric-card">
+                <div class="metric-value">650+</div>
+                <div class="metric-label">Cores Per Barrel</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">85%</div>
+                <div class="metric-label">Cost Reduction</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">Zero</div>
+                <div class="metric-label">Winter Downtime</div>
+              </div>
+            </div>
+            
+            <p style="margin-top: 1.5rem; color: var(--gray-600); font-style: italic;">
+              "The dry-cutting capability has been a game changer for our winter operations. We can work year-round without water supply concerns or freeze issues."
+            </p>
+          </div>
+        </div>
+
+        <!-- SCI Case Study -->
+        <div class="case-study animate-on-scroll">
+          <div class="case-study-header">
+            <div class="case-study-logo">
+              <img src="/images/sci-logo.png" alt="SCI Sorensen Companies Logo" width="100" height="50">
+            </div>
+            <div class="case-study-title">Sorensen Companies (SCI)</div>
+            <div class="case-study-subtitle">Large-Scale Infrastructure Projects</div>
+          </div>
+          <div class="case-study-content">
+            <div class="case-study-quote">
+              SCI has seen a dramatic reduction in downtime and cost since switching to Weldco Blades. The rebuild program is a game changer for our operation efficiency!
+            </div>
+            
+            <div class="case-study-metrics">
+              <div class="metric-card">
+                <div class="metric-value">750+</div>
+                <div class="metric-label">Cores Per Barrel</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">60%</div>
+                <div class="metric-label">Downtime Reduction</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-value">3</div>
+                <div class="metric-label">Rebuild Cycles</div>
+              </div>
+            </div>
+            
+            <p style="margin-top: 1.5rem; color: var(--gray-600); font-style: italic;">
+              "The 10-day rebuild turnaround keeps our projects moving. We've been able to take on larger contracts knowing our equipment won't let us down."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Calculator -->
+  <section class="roi-calculator">
+    <div class="container calculator-container">
+      <h2>Calculate Your Cost Savings</h2>
+      <p>See exactly how much you'll save by switching to Weldco PDC core barrels</p>
+      
+      <div class="calculator-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="cores-per-month">Cores Drilled Per Month:</label>
+            <input type="number" id="cores-per-month" value="100" min="1">
+          </div>
+          <div class="form-group">
+            <label for="current-barrel-cost">Current Barrel Cost ($):</label>
+            <input type="number" id="current-barrel-cost" value="150" min="1">
+          </div>
+          <div class="form-group">
+            <label for="current-barrel-life">Current Barrel Life (cores):</label>
+            <input type="number" id="current-barrel-life" value="100" min="1">
+          </div>
+          <div class="form-group">
+            <label for="weldco-barrel-cost">Weldco Barrel Cost ($):</label>
+            <input type="number" id="weldco-barrel-cost" value="400" min="1">
+          </div>
+        </div>
+        
+        <button onclick="calculateROI()" class="btn btn-white">Calculate Savings</button>
+        
+        <div id="roi-results" class="roi-results">
+          <div class="savings-highlight" id="annual-savings">$0</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; text-align: center;">
+            <div>
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);" id="monthly-savings">$0</div>
+              <div style="color: var(--gray-600);">Monthly Savings</div>
+            </div>
+            <div>
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);" id="payback-period">0</div>
+              <div style="color: var(--gray-600);">Months to Payback</div>
+            </div>
+            <div>
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);" id="cost-per-core">$0</div>
+              <div style="color: var(--gray-600);">Cost Per Core</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Experience 4X Performance?</h2>
+      <p>Join the growing number of Rocky Mountain contractors who trust Weldco's proven PDC technology.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-white">Get Performance Quote</a>
+        <a href="tel:4356808122" class="btn btn-outline">Call (435) 680-8122</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Animated counter for statistics
+    function animateCounter(element, target, duration = 2000) {
+      const start = 0;
+      const startTime = performance.now();
+      
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const current = Math.floor(progress * target);
+        element.textContent = current;
+        
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target;
+        }
+      }
+      
+      requestAnimationFrame(updateCounter);
+    }
+    
+    // ROI Calculator
+    function calculateROI() {
+      const coresPerMonth = parseInt(document.getElementById('cores-per-month').value);
+      const currentBarrelCost = parseInt(document.getElementById('current-barrel-cost').value);
+      const currentBarrelLife = parseInt(document.getElementById('current-barrel-life').value);
+      const weldcoBarrelCost = parseInt(document.getElementById('weldco-barrel-cost').value);
+      
+      // Weldco barrel life (conservative estimate)
+      const weldcoBarrelLife = 600;
+      
+      // Monthly costs
+      const currentMonthlyCost = (coresPerMonth / currentBarrelLife) * currentBarrelCost;
+      const weldcoMonthlyCost = (coresPerMonth / weldcoBarrelLife) * weldcoBarrelCost;
+      
+      // Savings
+      const monthlySavings = currentMonthlyCost - weldcoMonthlyCost;
+      const annualSavings = monthlySavings * 12;
+      
+      // Payback period (months)
+      const initialInvestment = weldcoBarrelCost - currentBarrelCost;
+      const paybackPeriod = initialInvestment / monthlySavings;
+      
+      // Cost per core
+      const weldcoCostPerCore = weldcoBarrelCost / weldcoBarrelLife;
+      
+      // Update display
+      document.getElementById('annual-savings').textContent = `${annualSavings.toLocaleString()} Annual Savings`;
+      document.getElementById('monthly-savings').textContent = `${monthlySavings.toFixed(0)}`;
+      document.getElementById('payback-period').textContent = `${paybackPeriod.toFixed(1)}`;
+      document.getElementById('cost-per-core').textContent = `${weldcoCostPerCore.toFixed(2)}`;
+      
+      document.getElementById('roi-results').classList.add('show');
+    }
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('stats-container')) {
+            // Animate counters
+            const counters = entry.target.querySelectorAll('[data-count]');
+            counters.forEach(counter => {
+              const target = parseInt(counter.dataset.count);
+              animateCounter(counter, target);
+            });
+          } else {
+            entry.target.style.animationDelay = `${Math.random() * 0.3}s`;
+            entry.target.classList.add('animate-on-scroll');
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe elements
+    document.querySelectorAll('.stats-container, .case-study, .comparison-chart').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

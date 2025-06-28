@@ -145,6 +145,14 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
               "name": "10\" PDC Core Barrel",
               "description": "10-inch PDC core barrel for utility locating"
             }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Product",
+              "name": "12\" PDC Core Barrel",
+              "description": "12-inch PDC core barrel for utility locating"
+            }
           }
         ]
       }
@@ -187,7 +195,7 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
         <div class="feature-card">
           <div class="feature-icon">⚡</div>
           <h3>4X Performance</h3>
-          <p>600-800 cores per barrel vs industry standard 75-200. Real results from real contractors.</p>
+          <p>600-800 cores per blade/rebuild vs industry standard 75-200. Real results from real contractors.</p>
         </div>
         
         <div class="feature-card">
@@ -199,7 +207,7 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
         <div class="feature-card">
           <div class="feature-icon">🔧</div>
           <h3>Rebuildable Design</h3>
-          <p>10-day turnaround rebuild service. Extend barrel life and reduce costs.</p>
+          <p>14-day turnaround rebuild service. Extend barrel life and reduce costs.</p>
         </div>
         
         <div class="feature-card">
@@ -227,7 +235,7 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
         </div>
         <div class="stat-card">
           <div class="stat-number">600-800</div>
-          <div class="stat-title">Cores Per Barrel</div>
+          <div class="stat-title">Cores Per Blade/Rebuild</div>
           <div class="stat-subtitle">Extended performance</div>
         </div>
         <div class="stat-card">
@@ -271,11 +279,13 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
   <!-- CTA Section -->
   <section class="cta">
     <div class="container">
-      <h2>Ready to Experience 4X Performance?</h2>
-      <p>Join contractors nationwide who trust Weldco's proven PDC technology. From the Rocky Mountains to coast to coast.</p>
-      <div class="cta-buttons">
-        <a href="/products" class="btn btn-white">View Products</a>
-        <a href="/contact" class="btn btn-outline">Get Quote</a>
+      <div class="cta-content">
+        <h2>Ready to Experience 4X Performance?</h2>
+        <p>Join contractors nationwide who trust Weldco's proven PDC technology. From the Rocky Mountains to coast to coast.</p>
+        <div class="cta-buttons">
+          <a href="/products" class="btn btn-white">View Products</a>
+          <a href="/contact" class="btn btn-outline">Get Quote</a>
+        </div>
       </div>
     </div>
   </section>
@@ -526,7 +536,7 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
     background-size: 20px 20px;
   }
   
-  .cta-content {
+  .cta .container {
     position: relative;
     z-index: 1;
   }
@@ -545,13 +555,7 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .cta-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    line-height: 1.7;
   }
 
   .cta-buttons {
@@ -634,6 +638,9 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
     .hero { padding: 4rem 0; }
     .features { padding: 4rem 0; }
     .cta { padding: 4rem 0; }
+    .states-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
   }
 
   @media (max-width: 768px) {
@@ -659,7 +666,6 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
     }
     .states-grid {
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
     }
     .states h2 {
       font-size: 2rem;
@@ -679,10 +685,7 @@ const pageKeywords = "PDC core barrels, utility locating equipment, dry cutting 
     .state-card h3 { font-size: 1.125rem; }
     .state-card p { font-size: 0.8rem; }
     .cta-content h2 { font-size: 1.75rem; }
-    .cta-actions {
-      flex-direction: column;
-      align-items: center;
-    }
+    .cta-content p { font-size: 1.125rem; }
     .cta-buttons {
       flex-direction: column;
       align-items: center;

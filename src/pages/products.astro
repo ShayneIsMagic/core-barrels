@@ -2,10 +2,10 @@
 // src/pages/products.astro
 import Layout from '../layouts/Layout.astro';
 
-const pageTitle = "PDC Core Barrels for Sale | 8\" & 10\" Core Bits | Weldco Blades | Rocky Mountain Region";
-const pageDescription = "High-performance PDC core barrels: 8\" ($2,500) and 10\" ($3,200) with 4X more cores. Dry-cutting technology, rebuildable design. Free shipping to Rocky Mountain region.";
+const pageTitle = "PDC Core Barrels for Sale | 8\", 10\" & 12\" Core Bits | Weldco Blades | Rocky Mountain Region";
+const pageDescription = "High-performance PDC core barrels: 8\" ($1,400), 10\" ($1,600) and 12\" ($1,800) with 4X more cores. Dry-cutting technology, rebuildable design. Free shipping to Rocky Mountain region.";
 const pageUrl = "https://corebarrels.com/products";
-const pageKeywords = "PDC core barrels for sale, 8 inch core bit, 10 inch core bit, core barrel pricing, utility locating equipment, dry cutting core barrels, Rocky Mountain drilling contractor, core barrel specifications, rebuildable core barrels";
+const pageKeywords = "PDC core barrels for sale, 8 inch core bit, 10 inch core bit, 12 inch core bit, core barrel pricing, utility locating equipment, dry cutting core barrels, Rocky Mountain drilling contractor, core barrel specifications, rebuildable core barrels";
 const canonicalUrl = "https://corebarrels.com/products";
 const ogImage10 = "/images/pdc-core-barrel.avif";
 const ogImage8 = "/images/product-8-inch.avif";
@@ -35,8 +35,8 @@ const ogImage8 = "/images/product-8-inch.avif";
   <meta property="og:image:alt" content="8-inch PDC Core Barrel for Utility Locating" slot="head" />
   <meta property="og:image:width" content="1200" slot="head" />
   <meta property="og:image:height" content="630" slot="head" />
-  <meta property="og:locale" content="en_US" slot="head" />
-  <meta property="og:locale:alternate" content="es_ES" slot="head" />
+  <meta property="og:image:locale" content="en_US" slot="head" />
+  <meta property="og:image:locale:alternate" content="es_ES" slot="head" />
   
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" slot="head" />
@@ -55,7 +55,7 @@ const ogImage8 = "/images/product-8-inch.avif";
     "name": "PDC Core Barrels Product Catalog",
     "description": "High-performance PDC core barrels for utility locating",
     "url": "https://corebarrels.com/products",
-    "numberOfItems": 2,
+    "numberOfItems": 3,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -76,7 +76,7 @@ const ogImage8 = "/images/product-8-inch.avif";
           ],
           "offers": {
             "@type": "Offer",
-            "price": "2500.00",
+            "price": "1400.00",
             "priceCurrency": "USD",
             "priceValidUntil": "2025-12-31",
             "availability": "https://schema.org/InStock",
@@ -116,7 +116,7 @@ const ogImage8 = "/images/product-8-inch.avif";
             },
             {
               "@type": "PropertyValue", 
-              "name": "Cores Per Barrel",
+              "name": "Cores Per Blade/Rebuild",
               "value": "600-800"
             },
             {
@@ -156,7 +156,7 @@ const ogImage8 = "/images/product-8-inch.avif";
           ],
           "offers": {
             "@type": "Offer",
-            "price": "3200.00",
+            "price": "1600.00",
             "priceCurrency": "USD",
             "priceValidUntil": "2025-12-31",
             "availability": "https://schema.org/InStock",
@@ -196,7 +196,86 @@ const ogImage8 = "/images/product-8-inch.avif";
             },
             {
               "@type": "PropertyValue",
-              "name": "Cores Per Barrel", 
+              "name": "Cores Per Blade/Rebuild", 
+              "value": "600-800"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Technology",
+              "value": "PDC (Polycrystalline Diamond Compact)"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Water Required",
+              "value": "No"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Rebuildable",
+              "value": "Yes"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "12\" PDC Core Barrel",
+          "description": "12-inch PDC core barrel for utility locating with dry-cutting technology",
+          "brand": {
+            "@type": "Brand",
+            "name": "Weldco Blades"
+          },
+          "model": "PDC-12",
+          "category": "Industrial Equipment",
+          "image": [
+            "https://corebarrels.com/images/IMG_9067.jpeg"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "1800.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2025-12-31",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Weldco Blades"
+            },
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0.00",
+                "currency": "USD"
+              },
+              "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "handlingTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 1,
+                  "maxValue": 3,
+                  "unitCode": "DAY"
+                },
+                "transitTime": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 2,
+                  "maxValue": 5,
+                  "unitCode": "DAY"
+                }
+              }
+            }
+          },
+          "additionalProperty": [
+            {
+              "@type": "PropertyValue",
+              "name": "Diameter",
+              "value": "12 inches"
+            },
+            {
+              "@type": "PropertyValue",
+              "name": "Cores Per Blade/Rebuild", 
               "value": "600-800"
             },
             {
@@ -261,16 +340,16 @@ const ogImage8 = "/images/product-8-inch.avif";
           </div>
           <div class="product-info">
             <h2>8" PDC Core Barrel</h2>
-            <div class="price">$2,500</div>
+            <div class="price">$1,400</div>
             <div class="specs">
               <h3>Specifications:</h3>
               <ul>
                 <li><strong>Diameter:</strong> 8 inches</li>
-                <li><strong>Cores Per Barrel:</strong> 600-800</li>
+                <li><strong>Cores Per Blade/Rebuild:</strong> 600-800</li>
                 <li><strong>Technology:</strong> PDC (Polycrystalline Diamond Compact)</li>
                 <li><strong>Water Required:</strong> No - Dry-cutting technology</li>
-                <li><strong>Rebuildable:</strong> Yes - 10-day turnaround</li>
-                <li><strong>Warranty:</strong> 30 days</li>
+                <li><strong>Rebuildable:</strong> Yes - 14-day turnaround</li>
+                <li><strong>Unique Design:</strong> Especially with the teeth configuration</li>
               </ul>
             </div>
             <div class="features">
@@ -281,6 +360,7 @@ const ogImage8 = "/images/product-8-inch.avif";
                 <li>Superior core quality</li>
                 <li>Reduced project time</li>
                 <li>Lower total cost of ownership</li>
+                <li>Most bits can be rebuilt 3-4 times</li>
               </ul>
             </div>
             <a href="/contact" class="btn btn-primary">Get Quote</a>
@@ -294,16 +374,16 @@ const ogImage8 = "/images/product-8-inch.avif";
           </div>
           <div class="product-info">
             <h2>10" PDC Core Barrel</h2>
-            <div class="price">$3,200</div>
+            <div class="price">$1,600</div>
             <div class="specs">
               <h3>Specifications:</h3>
               <ul>
                 <li><strong>Diameter:</strong> 10 inches</li>
-                <li><strong>Cores Per Barrel:</strong> 600-800</li>
+                <li><strong>Cores Per Blade/Rebuild:</strong> 600-800</li>
                 <li><strong>Technology:</strong> PDC (Polycrystalline Diamond Compact)</li>
                 <li><strong>Water Required:</strong> No - Dry-cutting technology</li>
-                <li><strong>Rebuildable:</strong> Yes - 10-day turnaround</li>
-                <li><strong>Warranty:</strong> 30 days</li>
+                <li><strong>Rebuildable:</strong> Yes - 14-day turnaround</li>
+                <li><strong>Unique Design:</strong> Especially with the teeth configuration</li>
               </ul>
             </div>
             <div class="features">
@@ -314,6 +394,41 @@ const ogImage8 = "/images/product-8-inch.avif";
                 <li>Superior core quality</li>
                 <li>Reduced project time</li>
                 <li>Lower total cost of ownership</li>
+                <li>Most bits can be rebuilt 3-4 times</li>
+              </ul>
+            </div>
+            <a href="/contact" class="btn btn-primary">Get Quote</a>
+          </div>
+        </div>
+
+        <!-- 12" Core Barrel -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="/images/IMG_9067.jpeg" alt="12-inch PDC Core Barrel for utility locating" />
+          </div>
+          <div class="product-info">
+            <h2>12" PDC Core Barrel</h2>
+            <div class="price">$1,800</div>
+            <div class="specs">
+              <h3>Specifications:</h3>
+              <ul>
+                <li><strong>Diameter:</strong> 12 inches</li>
+                <li><strong>Cores Per Blade/Rebuild:</strong> 600-800</li>
+                <li><strong>Technology:</strong> PDC (Polycrystalline Diamond Compact)</li>
+                <li><strong>Water Required:</strong> No - Dry-cutting technology</li>
+                <li><strong>Rebuildable:</strong> Yes - 14-day turnaround</li>
+                <li><strong>Unique Design:</strong> Especially with the teeth configuration</li>
+              </ul>
+            </div>
+            <div class="features">
+              <h3>Key Features:</h3>
+              <ul>
+                <li>4X more cores than industry standard</li>
+                <li>Perfect for Rocky Mountain winters</li>
+                <li>Superior core quality</li>
+                <li>Reduced project time</li>
+                <li>Lower total cost of ownership</li>
+                <li>Most bits can be rebuilt 3-4 times</li>
               </ul>
             </div>
             <a href="/contact" class="btn btn-primary">Get Quote</a>
@@ -328,19 +443,19 @@ const ogImage8 = "/images/product-8-inch.avif";
     <div class="container">
       <div class="rebuild-content">
         <h2>Rebuild Service</h2>
-        <p>Extend the life of your core barrels with our professional rebuild service. 10-day turnaround keeps your projects moving forward.</p>
+        <p>Extend the life of your core barrels with our professional rebuild service. 14-day turnaround keeps your projects moving forward. Most bits can be rebuilt 3-4 times, taking the total life of the bit into thousands of cores.</p>
         <div class="rebuild-features">
           <div class="rebuild-feature">
-            <h3>10-Day Turnaround</h3>
+            <h3>14-Day Turnaround</h3>
             <p>Quick rebuild service to minimize downtime</p>
           </div>
           <div class="rebuild-feature">
             <h3>Cost Effective</h3>
-            <p>Rebuild at a fraction of replacement cost</p>
+            <p>Rebuilds start as low as $750 - a fraction of replacement cost</p>
           </div>
           <div class="rebuild-feature">
-            <h3>Warranty Included</h3>
-            <p>30-day warranty on all rebuilds</p>
+            <h3>Multiple Rebuilds</h3>
+            <p>Most bits can be rebuilt 3-4 times for extended life</p>
           </div>
         </div>
         <a href="/contact" class="btn btn-outline">Schedule Rebuild</a>
