@@ -5,6 +5,9 @@ export default defineConfig({
   // Output static files for Cloudflare Pages
   output: 'static',
   
+  // Handle trailing slashes consistently
+  trailingSlash: 'always',
+  
   // Build configuration
   build: {
     // Inline stylesheets smaller than this limit (in bytes)
